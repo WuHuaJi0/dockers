@@ -9,6 +9,7 @@ RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list \
 	wget \
 	#ifconfig
 	net-tools \
+	zsh \
 	# ping
 	iputils-ping \
 	&& rm -rf /var/lib/apt/lists/*; \
