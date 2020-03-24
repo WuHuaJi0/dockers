@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
 # install opcache and composer
 RUN docker-php-ext-configure opcache --enable-opcache \
