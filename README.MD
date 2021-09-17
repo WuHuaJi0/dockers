@@ -1,1 +1,9 @@
-### 通过不同的 branch 来切换
+### 几个镜像
+
+包含：
+- php-fpm
+- composer
+- ubuntu 
+
+
+为了方便自己的使用习惯，通过分支来切换查看不同的dockerfile.
