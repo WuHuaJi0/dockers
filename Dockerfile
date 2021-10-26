@@ -6,7 +6,7 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 RUN docker-php-ext-configure opcache --enable-opcache \
     # php.ini 文件
     && docker-php-ext-install opcache \
-    && install-php-extensions gd zip pdo_mysql mysqli redis \
+    && install-php-extensions gd zip pdo_mysql pdo_pgsql pcntl mysqli redis \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/bin --filename=composer \
     && php -r "unlink('composer-setup.php');" \
