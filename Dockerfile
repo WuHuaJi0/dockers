@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.1-fpm
 
 # add install-php-extensions
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
