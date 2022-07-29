@@ -15,11 +15,11 @@ RUN docker-php-ext-configure opcache --enable-opcache \
     && docker-php-ext-enable xdebug
 
 # opcache 配置
-COPY ./opcache.ini $PHP_INI_DIR/conf.d/
+COPY opcache.ini $PHP_INI_DIR/conf.d/
 
-COPY ./xdebug.ini $PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini
-COPY ./error_reporting.ini $PHP_INI_DIR/conf.d/error_reporting.ini
+COPY xdebug.ini $PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini
+COPY error_reporting.ini $PHP_INI_DIR/conf.d/error_reporting.ini
 
 
 # php.ini 配置
-COPY ./php.ini $PHP_INI_DIR/
+COPY php.ini $PHP_INI_DIR/
