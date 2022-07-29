@@ -1,9 +1,6 @@
 ### 几个镜像
 
 包含：
-- php-fpm
-- composer
-- ubuntu 
-
+- php_fpm_81: 
 
 为了方便自己的使用习惯，通过分支来切换查看不同的dockerfile.

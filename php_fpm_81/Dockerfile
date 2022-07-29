@@ -13,7 +13,7 @@ RUN docker-php-ext-configure opcache --enable-opcache \
     && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
 # opcache 配置
-COPY ./opcache.ini $PHP_INI_DIR/conf.d/
+COPY opcache.ini $PHP_INI_DIR/conf.d/
 
 # php.ini 配置
-COPY ./php.ini $PHP_INI_DIR/
+COPY php.ini $PHP_INI_DIR/
