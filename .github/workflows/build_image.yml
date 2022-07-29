@@ -20,6 +20,7 @@ jobs:
           cd php_fpm_74
           docker build -t wuhuaji/php_fpm_74:latest --platform linux/amd64 ./
           docker push wuhuaji/php_fpm_74:latest
+
   build_php_fpm_81:
     runs-on: ubuntu-latest
     steps:
