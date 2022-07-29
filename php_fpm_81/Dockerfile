@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.1-fpm
 
 # add install-php-extensions
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
@@ -10,16 +10,10 @@ RUN docker-php-ext-configure opcache --enable-opcache \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/bin --filename=composer \
     && php -r "unlink('composer-setup.php');" \
-    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug
+    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
 # opcache 配置
-COPY opcache.ini $PHP_INI_DIR/conf.d/
-
-COPY xdebug.ini $PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini
-COPY error_reporting.ini $PHP_INI_DIR/conf.d/error_reporting.ini
-
+COPY ./opcache.ini $PHP_INI_DIR/conf.d/
 
 # php.ini 配置
-COPY php.ini $PHP_INI_DIR/
+COPY ./php.ini $PHP_INI_DIR/
